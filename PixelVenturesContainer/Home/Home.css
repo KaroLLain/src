@@ -1,0 +1,31 @@
+.homeContainer {
+  display: grid;
+  grid-template-rows: 78vh 7vh max-content 1fr max-content 10vh;
+  grid-template-columns:
+    [full-start] minmax(6rem, 1fr) [center-start] repeat(
+      6,
+      [col-start] minmax(min-content, 14rem) [col-end]
+    )
+    [center-end] minmax(6rem, 1fr) [full-end];
+}
+
+/* -------------- Media queries --------------- */
+
+@media screen and (max-width: 1050px) {
+  .homeContainer {
+    grid-template-rows: 74vh 7vh 1fr max-content 1fr 10vh;
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .homeContainer {
+    display: grid;
+    grid-template-rows: 74vh 7vh repeat(3, min-content) 10vh;
+    grid-template-columns:
+      [full-start] minmax(6rem, 1fr) [center-start] repeat(
+        6,
+        [col-start] minmax(min-content, 14rem) [col-end]
+      )
+      [center-end] minmax(6rem, 1fr) [full-end];
+  }
+}

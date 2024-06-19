@@ -1,0 +1,157 @@
+.header {
+  display: grid;
+  grid-column: full-start / full-end;
+  grid-template-rows: repeat(7, 1fr);
+  grid-template-columns: repeat(12, 1fr);
+
+  background: linear-gradient(to left, #4f556bd5 45%, #4f556bda 55%),
+    url("../../../assets/img/hero2.JPG");
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.headerBox {
+  color: var(--color-light-cream);
+  text-shadow: 1.2px 1.5px var(--color-dark-black);
+  display: grid;
+  gap: 2rem;
+  grid-column: 3 / 8;
+  grid-row: 3 / 6;
+  text-align: center;
+  justify-items: center;
+  align-self: center;
+}
+
+.headerText {
+  font-size: var(--font-size-2XL);
+  font-weight: 200;
+}
+
+.headerText--first {
+  margin: 0 2rem;
+  display: flex;
+  gap: 2rem;
+  animation: showup 4.5s;
+}
+
+.headerText--second {
+  animation: slidein 5s;
+}
+
+.headerMessage {
+  font-size: var(--font-size-L);
+  font-weight: 200;
+  font-style: italic;
+  animation: movingDown 3s;
+}
+
+.btn__header {
+  justify-self: center;
+  align-self: center;
+  grid-column: 1 / -1;
+  grid-row: 6 / 8;
+
+  animation: moveUpSlider 3s;
+}
+
+/* media queries */
+
+
+@media screen and (max-width: 1500px) {
+  .headerBox {
+    grid-column: 1 / -1;
+    padding-left: 7rem;
+    justify-content: left;
+    text-align: left;
+
+    .headerText {
+      .headerText--first {
+        margin: 0;
+      }
+    }
+
+    .headerMessage {
+      justify-self: left;
+    }
+  }
+}
+
+@media screen and (max-width: 1150px) {
+  .header {
+    background-position: right 40% bottom 50%;
+  }
+  
+  .headerBox {
+    padding-left: 5rem;
+    .headerText {
+      font-size: var(--font-size-XL);
+    }
+
+    .headerMessage {
+      font-size: var(--font-size-M);
+    }
+  
+  }
+}
+
+@media screen and (max-width: 970px) {
+  .headerBox {
+    padding-left: 2rem;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  .headerBox {
+    .headerText {
+      font-size: var(--font-size-L);
+    }
+
+    .headerMessage {
+      font-size: var(--font-size-big);
+    }
+  
+  }
+}
+
+@media screen and (max-width: 510px) {
+  .header {
+    background-position: right 40% bottom 50%;
+  
+  }
+  .headerBox {
+    
+    justify-content: center;
+    text-align: center;
+    padding-left: 0;
+    .headerText {
+      font-size: var(--font-size-M);
+
+      .headerText--first {
+        gap: 0.7rem;
+      }
+    }
+
+    .headerMessage {
+      font-size: var(--default-font-size);
+      justify-self: center;
+    }
+  
+  }
+}
+
+@media screen and (max-width: 340px) {
+ 
+  .headerBox {
+    .headerText {
+      font-size: 2.75rem;
+    }
+
+    .headerMessage {
+      font-size: var(--font-size-medium);
+      justify-self: center;
+    }
+  
+  }
+}

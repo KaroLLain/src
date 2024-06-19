@@ -1,0 +1,282 @@
+.contact {
+  grid-column: full-start / full-end;
+  height: auto;
+  background-color: var(--color-dark-black);
+  color: var(--color-light-cream);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20rem 4rem 20rem;
+}
+
+
+.contactContent {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 7rem;
+}
+
+.contactContentForm {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 60rem;
+  row-gap: 1rem;
+}
+
+.contactInfo {
+  width: 30rem;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1rem;
+}
+
+.contactFormBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+
+.contactInfoWrapper {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contactInfoWrapperBox {
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.5rem;
+}
+
+.contactInfoWrapperBox::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  top: 0;
+  left: 5.3em;
+  background-color: var(--color-hilight-brownOpaque);
+}
+
+.contactInfoWrapperBox:last-child {
+  row-gap: 3rem;
+}
+
+.contactInfoSvg {
+  height: 3.5rem;
+  width: 3.5rem;
+}
+
+input {
+  background-color: var(--color-primary-darkOpaque);
+  font-size: var(--font-size-medium);
+  color: var(--color-light-cream);
+  font-family: inherit;
+  padding: 1rem 1.5rem;
+  border-radius: 2rem;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid transparent;
+  transition: all 0.3s;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 1rem 2rem var(--color-shadow);
+  border-bottom: 3px solid var(--color-dark-blue);
+}
+
+input:focus:invalid {
+  border-bottom: 3px solid var(--color-dark-blue);
+}
+
+input::-webkit-input-placeholder {
+  color: rgba(rgb(248, 248, 248), 0.1);
+}
+
+input__input:placeholder-shown + &__label {
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4rem);
+}
+
+input__select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: black;
+}
+
+textarea {
+  background-color: var(--color-primary-darkOpaque);
+  font-size: var(--font-size-medium);
+  color: var(--color-light-cream);
+  font-family: inherit;
+  height: 18rem;
+  min-height: 18rem;
+  max-height: 28rem;
+  padding: 1rem 1.5rem;
+  border: none;
+  border-bottom: 3px solid transparent;
+  border-radius: 2rem;
+}
+
+
+.firstLineBox {
+  display: flex;
+  gap: 1rem;
+}
+
+/* media queries */
+
+
+@media screen and (max-width: 1280px) {
+  .contact {
+    padding: 13rem 5rem 5rem;
+  }
+
+  .contactContent {
+    padding-top: 5rem;
+  }
+}
+
+@media screen and (max-width: 1204px) {
+  .contact {
+    padding: 8rem 6rem;
+  }
+  .contactContent {
+    padding-top: 1rem;
+  }
+
+  .wrapper {
+    padding: 0 1rem;
+  }
+}
+
+@media screen and (max-width: 970px) {
+
+  .contact {
+    padding: 10rem 2rem 5rem;
+  }
+
+  .contactContent {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2rem;
+
+    .contactInfo {
+      width: 100%;
+      align-items: self-start;
+    }
+
+    .contactContentForm {
+      width: 100%;
+
+      .contactFormBox {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 912px) {
+
+  .contact {
+    padding: 10rem 4rem 5rem;
+  }
+}
+
+@media screen and (max-width: 820px) {
+
+  .contact {
+    padding: 10rem 2rem;
+  }
+
+  .contactContent {
+    padding: 7rem 2rem;
+  }
+
+  textarea {
+    height: 19rem;
+    min-height: 19rem;
+    max-height: 28rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .contactContent {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@media screen and (max-width: 540px) {
+
+  .contact {
+    padding: 6rem 1rem 5rem;
+  }
+  .contactContent {
+    padding-top: 3rem;
+    padding-bottom: 0;
+  }
+
+  .portfolioHeader{
+    font-size: 3.5rem;
+  }
+}
+
+
+@media screen and (max-width: 384px) {
+
+  .contact {
+    padding: 6rem 1rem 5rem;
+  }
+
+  .contactContent {
+    padding-top: 2rem;
+  }
+
+  .contactContentForm {
+    gap: 0;
+  }
+
+  .firstLineBox {
+    flex-direction: column;
+  }
+  .portfolioHeader {
+    font-size: 3rem;
+  }
+
+  .h__second{
+    font-size: 2.5rem;
+  }
+
+  textarea {
+    height: 10rem;
+    min-height: 10rem;
+    max-height: 28rem;
+  }
+
+}
+
+
+@media screen and (max-width: 384px) {
+
+  .contact {
+    padding: 6rem 0 5rem;
+  }
+
+  .h__second{
+    font-size: 2.2rem;
+  }
+
+}

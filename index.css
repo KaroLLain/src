@@ -1,0 +1,367 @@
+:root {
+  /* color scheme */
+  --color-primary-blue: #4f556b;
+  --color-primary-blueOpaque: #4e546acc;
+  --color-primary-blueOpaqueplus: hsla(227, 15%, 36%, 0.431);
+  --color-primary-blueOpaquenext: #291d20b7;
+  --color-light-cream: #fff5e9;
+  --color-hilight-brown: #d67935;
+  --color-hilight-brownOpaque: #d57734da;
+  --color-dark-blue: #2f4858;
+  --color-dark-black: #402e32;
+  --color-semi-transparent: #412f339d;
+  --color-primary-darkOpaque: #2f231ed0;
+
+  /* font colors */
+  --color-font-primary: #e6e6e6;
+  --color-font-secondary: #3a3434;
+  --color-font-white: rgb(255, 255, 255);
+
+  /* font sizes */
+  --default-font-size: 2rem;
+  --font-size-big: 2.5rem;
+  --font-size-medium: 1.75rem;
+  --font-size-small: 1.4rem;
+
+  --font-size-M: 3rem;
+  --font-size-L: 4rem;
+  --font-size-XL: 5rem;
+  --font-size-2XL: 6rem;
+  --font-size-3XL: 9rem;
+
+  /* shadow */
+  --color-shadow: #29485780;
+  --color-shadowLight: #29475738;
+
+  /* RESPONSIVE BREAKPOINTS */
+  --bp-XXL: 98em; /* 1566px */
+  --bp-XL: 79em; /* 1200px */
+  --bp-L: 62.5em; /* 1000px */
+  --bp-M: 50em; /* 800px */
+  --bp-mobile-L: 38em; /* 608px */
+  --bp-mobile-M: 32em; /* 512px */
+  --bp-mobile-S: 23em; /* 316px */
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+  color: var(--color-light-cream);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Raleway", serif;
+  font-weight: 400;
+  line-height: 0.9;
+}
+
+
+/* typography */
+
+.h__second {
+  font-size: var(--font-size-big);
+  font-weight: 400;
+  margin-left: 1rem;
+}
+
+.h__third {
+  font-size: var(--font-size-medium);
+  font-weight: 200;
+}
+
+.underlining {
+  position: relative;
+  width: 10rem;
+  height: 4px;
+  border-radius: 1rem;
+  background-color: var(--color-primary-blueOpaque);
+  overflow: hidden;
+  
+}
+
+.dot {
+  position: absolute;
+  height: 10px;
+  left: 5px;
+  width: 1rem;
+  background-color: var(--color-dark-black);
+  border: 1.5px solid var(--color-dark-black);
+  animation: movingDot 3s linear infinite;
+}
+
+
+.muscle {
+  font-weight: 500;
+  color: var(--color-hilight-brownOpaque);
+}
+
+.show{
+  animation: movingUp .5s ease;
+}
+
+
+/* -------------------- FLIPPING BUTTON ----------------------- */
+
+.btnFlip {
+  opacity: 1;
+  outline: 0;
+  color: var(--color-light-cream);
+  font-size: var(--default-font-size);
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover {
+    &:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+    }
+
+    &:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+    }
+  }
+
+  &:before,
+  &:after {
+    /* border-radius: 5rem; */
+    font-weight: 400;
+    top: 0;
+    left: 0;
+    padding: 0.5rem 4rem;
+    line-height: 4rem;
+    transition: 0.5s;
+    display: block;
+  }
+
+  &:after {
+    opacity: 0;
+    width: 100%;
+    color: var(--color-primary-blue);
+    position: absolute;
+    background: var(--color-light-cream);
+    content: attr(data-back);
+    transform: translateY(-50%) rotateX(90deg);
+  }
+
+  &:before {
+    letter-spacing: 1px;
+    width: 100%;
+    opacity: 1;
+    color: var(--color-light-cream);
+    position: relative;
+    background: var(--color-primary-blue);
+    content: attr(data-front);
+    transform: translateY(0) rotateX(0);
+  }
+}
+
+.btnFlipSmall {
+  font-size: 2rem;
+  padding: 0 0;
+
+  &:before,
+  &:after {
+    padding: 0 0.5rem;
+  }
+}
+
+/* -------------------- BUBBLING BUTTON ----------------------- */
+
+.wrapper {
+  padding: 1rem 1rem;
+  filter: url("#goo");
+}
+
+.button {
+  font-size: var(--font-size-medium);
+  color: var(--color-light-cream);
+  letter-spacing: 0.25rem;
+  line-height: 1;
+  text-align: center;
+  display: inline-block;
+  background: var(--color-primary-blue);
+  padding: 1.28rem 3.8rem 1.13rem;
+  border-radius: 1rem;
+  position: relative;
+  min-width: 8.23rem;
+  border: none;
+}
+
+.button:before,
+.button:after {
+  width: 4.4em;
+  height: 2.95em;
+  position: absolute;
+  content: "";
+  display: inline-block;
+  background: var(--color-primary-blue);
+  border-radius: 50%;
+  transition: transform 0.5s ease;
+  transform: scale(0);
+  z-index: -1;
+}
+
+.button:before {
+  top: -25%;
+  left: 20%;
+}
+
+.button:after {
+  bottom: -25%;
+  right: 20%;
+}
+
+.button:hover:before,
+.button:hover:after {
+  transform: none;
+}
+
+.button:active,
+.button:active:before,
+.button:active:after {
+  background-color: var(--color-hilight-brown);
+}
+
+.svgStyle {
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+/* animations */
+
+@keyframes movingUp {
+  0% {
+    visibility: hidden;
+    transform: translateY(8rem);
+    opacity: 0
+  }
+
+  100% {
+    visibility: visible;
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes moveUpSlider {
+  0% {
+    opacity: 0;
+    transform: translateY(5rem) scaleY(0.6);
+  }
+
+  85% {
+    opacity: 0;
+    transform: translateY(5rem) scaleY(0.7);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scaleY(1);
+  }
+}
+
+@keyframes movingDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-8rem);
+  }
+
+  60% {
+    opacity: 0;
+    transform: translateY(-8rem);
+  }
+}
+
+@keyframes showup {
+  0% {
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 0;
+  }
+
+  30% {
+    opacity: 1;
+  }
+}
+
+@keyframes slidein {
+  0% {
+    opacity: 0;
+    width: 0px;
+  }
+
+  20% {
+    opacity: 0;
+    width: 0px;
+  }
+
+  30% {
+    width: 355px;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    width: 355px;
+  }
+}
+
+@keyframes draw {
+  0% {
+    stroke-dasharray: 140 540;
+    stroke-dashoffset: -474;
+    stroke-width: 8px;
+  }
+  100% {
+    stroke-dasharray: 760;
+    stroke-dashoffset: 0;
+    stroke-width: 2px;
+  }
+}
+
+@keyframes movingDot {
+  0% {
+    left: -2rem;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+
+/* -------------- Media queries --------------- */
+
+
+@media screen and (max-width: 510px) {
+  .btnFlip {
+  &:before,
+  &:after {
+    font-size: 1.8rem;
+    padding: .2rem 3rem;
+  }
+  }
+}

@@ -1,0 +1,195 @@
+.about {
+  grid-column: full-start / full-end;
+  display: flex;
+  background: linear-gradient(to left, #402e32cc 45%, #402e32cc 55%),
+    url("../../../assets/img/stones.jpg");
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30rem 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.aboutPictureWrapper {
+  display: grid;
+}
+
+.aboutProfilePhoto {
+  height: 45rem;
+}
+
+.aboutBox {
+  display: flex;
+  flex-direction: column;
+  height: 50rem;
+  width: 70rem;
+  gap: 2rem;
+  justify-content: center;
+  padding-left: 5rem;
+  color: var(--color-light-cream);
+  font-weight: 400;
+  position: relative;
+}
+
+.aboutHeader {
+  font-size: var(--font-size-big);
+}
+
+.aboutText {
+  text-align: justify;
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+.aboutText::after {
+  content: "";
+  display: flex;
+  position: absolute;
+  margin-top: 1rem;
+  height: 2px;
+  width: 90%;
+  background-color: var(--color-hilight-brownOpaque);
+  opacity: 0.6;
+}
+
+.linksWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* cv btn */
+
+/* @import "compass/css3"; */
+
+.faWrapper {
+  font-size: 3rem;
+  height: 4rem;
+  width: 15rem;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: right;
+  gap: 1rem;
+}
+
+.faWrapperItem {
+  color: var(--color-light-cream);
+
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.svgWrapper {
+  height: 4rem;
+  width: 15rem;
+  cursor: pointer;
+}
+
+.shape {
+  fill: var(--color-semi-transparent);
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  stroke: var(--color-hilight-brownOpaque);
+}
+
+.text {
+  color: var(--color-light-cream);
+  font-size: var(--font-size-small);
+  letter-spacing: 2px;
+  line-height: 2rem;
+  position: relative;
+  top: -3rem;
+  left: 3.5rem;
+}
+
+.svgWrapper:hover .shape {
+  -webkit-animation: 0.5s draw linear forwards;
+  animation: 0.5s draw linear forwards;
+}
+
+
+/* media queries */
+
+@media screen and (max-width: 1400px) {
+  .aboutBox {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .about {
+    padding: 15rem 5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about {
+    padding: 10rem 3rem;
+  }
+
+  .aboutProfilePhoto {
+    height: 40rem;
+  }
+}
+
+@media screen and (max-width: 1205px) {
+  .aboutBox {
+    width: 55%;
+    margin-top: 0;
+    padding-left: 3.5rem;
+  }
+}
+
+
+
+@media screen and (max-width: 970px) {
+  .about{
+    padding: 10rem 0;
+  }
+  .headerText {
+    font-size: var(--font-size-XL);
+  }
+  .headerMessage {
+    font-size: var(--font-size-M);
+  }
+}
+
+@media screen and (max-width: 890px) {
+  .about {
+    flex-direction: column;
+    .aboutBox {
+      width: 80%;
+    }
+  }
+
+  .aboutProfilePhoto {
+    height: 30rem;
+  }
+
+  .aboutBox {
+    height: 100%;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    padding-left: 0;
+    color: var(--color-light-cream);
+    font-weight: 400;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about {
+    padding: 10rem 0;
+  }
+}
+
+@media screen and (max-width: 540px) {
+
+  .about {
+    padding: 5rem 0;
+  }
+}
