@@ -157,7 +157,7 @@ export default function Contact() {
             <div className="contactInfoWrapperBox">
               <div className="contactInfoName h__third">Karolina</div>
               <div className="contactInfoEmail h__third">
-                contact@pixelventure.eu
+                pxlventure@gmail.com
               </div>
             </div>
           </div>

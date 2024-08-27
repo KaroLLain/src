@@ -1,6 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import praesterno from "../../../assets/img/praesterno.png";
+import root from "../../../assets/img/root.jpg"
 import "./Portfolio.css";
 
 export default function Portfolio() {
@@ -22,7 +23,7 @@ export default function Portfolio() {
               Fundacja Praesterno
               <div className="technologies--icons cardTechIcons">
                 <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-css3"></use>
+                  <use xlinkHref="/sprite.svg#icon-html5"></use>
                 </svg>
                 <svg className="techIcon cardTechIcon">
                   <use xlinkHref="/sprite.svg#icon-sass"></use>
@@ -47,11 +48,12 @@ export default function Portfolio() {
           </div>
         </div>
 
-        <div className="card cardEmpty">
+        <div className="card">
+          <img className="cardImg" src={root} alt="" />
           <div className="cardContent">
-            <h2 className="cardNameEmpty">
-              In the making
-              <div className="cardTechIcons">
+            <h2 className="cardName">
+              Root | Grow With Us
+              <div className="technologies--icons cardTechIcons">
                 <svg className="techIcon cardTechIcon">
                   <use xlinkHref="/sprite.svg#icon-html5"></use>
                 </svg>
@@ -59,20 +61,20 @@ export default function Portfolio() {
                   <use xlinkHref="/sprite.svg#icon-css3"></use>
                 </svg>
                 <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-sass"></use>
-                </svg>
-                <svg className="techIcon cardTechIcon">
                   <use xlinkHref="/sprite.svg#icon-react"></use>
-                </svg>
-                <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-typescript"></use>
                 </svg>
               </div>
             </h2>
 
             <div className="faIcons">
-              <a className="cardLink" href="https://github.com/KaroLLain">
+              <a
+                className="cardLink"
+                href="https://github.com/KaroLLain/praesterno"
+              >
                 <i className="faIcons__item fa fa-github" aria-hidden="true" />
+              </a>
+              <a className="cardLink" href="#a">
+                <i className="faIcons__item fa fa-link" aria-hidden="true" />
               </a>
             </div>
           </div>
