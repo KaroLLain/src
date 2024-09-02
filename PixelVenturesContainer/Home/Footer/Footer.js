@@ -15,7 +15,7 @@ export default function Footer() {
             </a>
             <a
               className="faWrapperItem"
-              href="https://www.linkedin.com/in/karolina-knap-65b4a112b/"
+              href="https://www.linkedin.com/in/karolina-knap-parzychowska-65b4a112b/"
             >
               <i className="fa fa-linkedin-square" />
             </a>

@@ -1,168 +1,344 @@
-import "./Contact.css";
-import React, { useState } from "react";
-import axios from "axios";
-import { useInView } from "react-intersection-observer";
+// import "./Contact.css";
+// import React, { useState } from "react";
+// import axios from "axios";
+// import { useInView } from "react-intersection-observer";
 
-import { toast } from "react-toastify";
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
 
-export default function Contact() {
-  const { ref: myRef, inView: fadeInSection } = useInView();
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [subject, setSubject] = useState("");
-  const [message, setMessage] = useState("");
-  const [banner, setBanner] = useState("");
+// export default function Contact() {
+//   const { ref: myRef, inView: fadeInSection } = useInView();
+//   const [name, setName] = useState("");
+//   const [email, setEmail] = useState("");
+//   const [subject, setSubject] = useState("");
+//   const [message, setMessage] = useState("");
+//   const [banner, setBanner] = useState("");
 
-  const handleName = (e) => {
-    setName(e.target.value);
-  };
+//   const handleName = (e) => {
+//     setName(e.target.value);
+//   };
 
-  const handleEmail = (e) => {
-    setEmail(e.target.value);
-  };
+//   const handleEmail = (e) => {
+//     setEmail(e.target.value);
+//   };
 
-  const handleSubject = (e) => {
-    setSubject(e.target.value);
-  };
+//   const handleSubject = (e) => {
+//     setSubject(e.target.value);
+//   };
 
-  const handleMessage = (e) => {
-    setMessage(e.target.value);
-  };
+//   const handleMessage = (e) => {
+//     setMessage(e.target.value);
+//   };
 
+//   const submitForm = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const res = await axios.post("https://pixelventure-server-ehkd3fff9-karollains-projects.vercel.app/contact", {
+//         name: name,
+//         email: email,
+//         subject: subject,
+//         message: message,
+//         });
+//       if (name.length === 0 || email.length === 0 || subject.length === 0 || message.length === 0) {
+//         setBanner(res.data.msg);
+//         toast.error(res.data.msg);
+//       } else if (res.status === 200) {
+//         setBanner(res.data.msg);
+//         toast.success(res.data.msg);
 
-  const submitForm = async (e) => {
-    e.preventDefault();
+//         setName("");
+//         setEmail("");
+//         setSubject("");
+//         setMessage("");
+//       }
+//     } catch (error) {
+//       console.log(error.response);
+//     }
+//   };
+
+//   return (
+//     <section ref={myRef} className="contact" id="contactSection">
+//       {/* <div className={`${"contactContainer"} ${fadeInSection ? "show" : ''}`}> */}
+//       <h1
+//         className={`${"contactHeader"} ${
+//           fadeInSection ? "show" && "portfolioHeader" : ""
+//         }`}
+//       >
+//         get in touch
+//       </h1>
+//       <div className={`${"underlining"} ${fadeInSection ? "show" : ""}`}>
+//         <span className="dot"></span>
+//       </div>
+//       <div className={`${"contactContent"} ${fadeInSection ? "show" : ""}`}>
+//         <div className="contactContentForm">
+//           <h2 className="h__second">Message me</h2>
+//           <form onSubmit={submitForm} className="contactFormBox">
+//             <p>{banner}</p>
+//             <div className="firstLineBox">
+//               <input
+//                 onChange={handleName}
+//                 value={name}
+//                 type="text"
+//                 name="name"
+//                 placeholder="Name"
+//               />
+//               <input
+//                 onChange={handleEmail}
+//                 value={email}
+//                 type="email"
+//                 name="email"
+//                 placeholder="Email"
+//               />
+//             </div>
+//             <input
+//               onChange={handleSubject}
+//               value={subject}
+//               type="text"
+//               name="subject"
+//               placeholder="Subject"
+//             />
+//             <textarea
+//               onChange={handleMessage}
+//               value={message}
+//               name="message"
+//               cols="30"
+//               rows="10"
+//               placeholder="Message"
+//             ></textarea>
+
+//             <div className="wrapper contactBox">
+//               <button className="button" type="submit">
+//                 Enquire
+//               </button>
+//             </div>
+
+//             {/* -------------  STYLED BUTTON  ------------- */}
+//             {/* Filter: https://css-tricks.com/gooey-effect/  */}
+
+//             <svg
+//               className="svgStyle"
+//               xmlns="http://www.w3.org/2000/svg"
+//               version="1.1"
+//             >
+//               <defs>
+//                 <filter id="goo">
+//                   <feGaussianBlur
+//                     in="SourceGraphic"
+//                     stdDeviation="10"
+//                     result="blur"
+//                   />
+//                   <feColorMatrix
+//                     in="blur"
+//                     mode="matrix"
+//                     values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
+//                     result="goo"
+//                   />
+//                   <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+//                 </filter>
+//               </defs>
+//             </svg>
+//           </form>
+//         </div>
+
+//         <div className="contactInfo">
+//           <p className="contactInfoHeader h__second">Contact info</p>
+//           <div className="contactInfoWrapper">
+//             <div className="contactInfoWrapperBox">
+//               <svg className="contactInfoSvg">
+//                 <use xlinkHref="/sprite.svg#icon-user"></use>
+//               </svg>
+//               <svg className="contactInfoSvg">
+//                 <use xlinkHref="/sprite.svg#icon-mail"></use>
+//               </svg>
+//             </div>
+
+//             <div className="contactInfoWrapperBox">
+//               <div className="contactInfoName h__third">Karolina</div>
+//               <div className="contactInfoEmail h__third">
+//                 pxlventure@gmail.com
+//               </div>
+//             </div>
+//           </div>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+
+import './Contact.css'
+import React, { useState } from 'react'
+import axios from 'axios'
+import { useInView } from 'react-intersection-observer'
+import { toast } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
+
+export default function Contact () {
+  const { ref: myRef, inView: fadeInSection } = useInView()
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [subject, setSubject] = useState('')
+  const [message, setMessage] = useState('')
+  const [banner, setBanner] = useState('')
+
+  const handleName = e => {
+    setName(e.target.value)
+  }
+
+  const handleEmail = e => {
+    setEmail(e.target.value)
+  }
+
+  const handleSubject = e => {
+    setSubject(e.target.value)
+  }
+
+  const handleMessage = e => {
+    setMessage(e.target.value)
+  }
+
+  const submitForm = async e => {
+    e.preventDefault()
     try {
-      const res = await axios.post(`http://127.0.0.1:5000/contact`, {
-        name: name,
-        email: email,
-        subject: subject,
-        message: message,
-      });
-      if (name.length === 0 || email.length === 0 || subject.length === 0 || message.length === 0) {
-        setBanner(res.data.msg);
-        toast.error(res.data.msg);
+      const res = await axios.post(
+        'https://pixelventure-server-karollains-projects.vercel.app/contact',
+        {
+          name: name,
+          email: email,
+          subject: subject,
+          message: message
+        }
+      )
+      if (
+        name.length === 0 ||
+        email.length === 0 ||
+        subject.length === 0 ||
+        message.length === 0
+      ) {
+        setBanner(res.data.msg)
+        toast.error(res.data.msg)
       } else if (res.status === 200) {
-        setBanner(res.data.msg);
-        toast.success(res.data.msg);
+        setBanner(res.data.msg)
+        toast.success(res.data.msg)
 
-        setName("");
-        setEmail("");
-        setSubject("");
-        setMessage("");
+        setName('')
+        setEmail('')
+        setSubject('')
+        setMessage('')
       }
     } catch (error) {
-      console.log(error.response);
+      if (error.response) {
+        console.log(error.response)
+        setBanner('An error occurred: ' + error.response.data.message)
+        toast.error('An error occurred: ' + error.response.data.message)
+      } else {
+        console.log('Error', error.message)
+        setBanner('An error occurred: ' + error.message)
+        toast.error('An error occurred: ' + error.message)
+      }
     }
-  };
-
-
+  }
 
   return (
-    <section ref={myRef} className="contact" id="contactSection">
-      {/* <div className={`${"contactContainer"} ${fadeInSection ? "show" : ''}`}> */}
+    <section ref={myRef} className='contact' id='contactSection'>
       <h1
-        className={`${"contactHeader"} ${
-          fadeInSection ? "show" && "portfolioHeader" : ""
+        className={`contactHeader ${
+          fadeInSection ? 'show portfolioHeader' : ''
         }`}
       >
         get in touch
       </h1>
-      <div className={`${"underlining"} ${fadeInSection ? "show" : ""}`}>
-        <span className="dot"></span>
+      <div className={`underlining ${fadeInSection ? 'show' : ''}`}>
+        <span className='dot'></span>
       </div>
-      <div className={`${"contactContent"} ${fadeInSection ? "show" : ""}`}>
-        <div className="contactContentForm">
-          <h2 className="h__second">Message me</h2>
-          <form onSubmit={submitForm} className="contactFormBox">
+      <div className={`contactContent ${fadeInSection ? 'show' : ''}`}>
+        <div className='contactContentForm'>
+          <h2 className='h__second'>Message me</h2>
+          <form onSubmit={submitForm} className='contactFormBox'>
             <p>{banner}</p>
-            <div className="firstLineBox">
+            <div className='firstLineBox'>
               <input
                 onChange={handleName}
                 value={name}
-                type="text"
-                name="name"
-                placeholder="Name"
+                type='text'
+                name='name'
+                placeholder='Name'
               />
               <input
                 onChange={handleEmail}
                 value={email}
-                type="email"
-                name="email"
-                placeholder="Email"
+                type='email'
+                name='email'
+                placeholder='Email'
               />
             </div>
             <input
               onChange={handleSubject}
               value={subject}
-              type="text"
-              name="subject"
-              placeholder="Subject"
+              type='text'
+              name='subject'
+              placeholder='Subject'
             />
             <textarea
               onChange={handleMessage}
               value={message}
-              name="message"
-              cols="30"
-              rows="10"
-              placeholder="Message"
+              name='message'
+              cols='30'
+              rows='10'
+              placeholder='Message'
             ></textarea>
 
-            <div className="wrapper contactBox">
-              <button className="button" type="submit">
+            <div className='wrapper contactBox'>
+              <button className='button' type='submit'>
                 Enquire
               </button>
             </div>
 
-            {/* -------------  STYLED BUTTON  ------------- */}
-            {/* Filter: https://css-tricks.com/gooey-effect/  */}
-
             <svg
-              className="svgStyle"
-              xmlns="http://www.w3.org/2000/svg"
-              version="1.1"
+              className='svgStyle'
+              xmlns='http://www.w3.org/2000/svg'
+              version='1.1'
             >
               <defs>
-                <filter id="goo">
+                <filter id='goo'>
                   <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="10"
-                    result="blur"
+                    in='SourceGraphic'
+                    stdDeviation='10'
+                    result='blur'
                   />
                   <feColorMatrix
-                    in="blur"
-                    mode="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9"
-                    result="goo"
+                    in='blur'
+                    mode='matrix'
+                    values='1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9'
+                    result='goo'
                   />
-                  <feComposite in="SourceGraphic" in2="goo" operator="atop" />
+                  <feComposite in='SourceGraphic' in2='goo' operator='atop' />
                 </filter>
               </defs>
             </svg>
           </form>
         </div>
 
-        <div className="contactInfo">
-          <p className="contactInfoHeader h__second">Contact info</p>
-          <div className="contactInfoWrapper">
-            <div className="contactInfoWrapperBox">
-              <svg className="contactInfoSvg">
-                <use xlinkHref="/sprite.svg#icon-user"></use>
+        <div className='contactInfo'>
+          <p className='contactInfoHeader h__second'>Contact info</p>
+          <div className='contactInfoWrapper'>
+            <div className='contactInfoWrapperBox'>
+              <svg className='contactInfoSvg'>
+                <use xlinkHref='/sprite.svg#icon-user'></use>
               </svg>
-              <svg className="contactInfoSvg">
-                <use xlinkHref="/sprite.svg#icon-mail"></use>
+              <svg className='contactInfoSvg'>
+                <use xlinkHref='/sprite.svg#icon-mail'></use>
               </svg>
             </div>
 
-            <div className="contactInfoWrapperBox">
-              <div className="contactInfoName h__third">Karolina</div>
-              <div className="contactInfoEmail h__third">
-                pxlventure@gmail.com
+            <div className='contactInfoWrapperBox'>
+              <div className='contactInfoName h__third'>Karolina</div>
+              <div className='contactInfoEmail h__third'>
+                <a href='mailto:pxlventure@gmail.com'>pxlventure@gmail.com</a>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  );
+  )
 }
