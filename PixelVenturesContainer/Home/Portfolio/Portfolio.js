@@ -50,38 +50,6 @@ export default function Portfolio() {
         </div>
 
         <div className="card">
-          <img className="cardImg" src={root} alt="" />
-          <div className="cardContent">
-            <h2 className="cardName">
-              Root | Grow With Us
-              <div className="technologies--icons cardTechIcons">
-                <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-html5"></use>
-                </svg>
-                <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-css3"></use>
-                </svg>
-                <svg className="techIcon cardTechIcon">
-                  <use xlinkHref="/sprite.svg#icon-react"></use>
-                </svg>
-              </div>
-            </h2>
-
-            <div className="faIcons">
-              <a
-                className="cardLink"
-                href="https://github.com/KaroLLain/root"
-              >
-                <i className="faIcons__item fa fa-github" aria-hidden="true" />
-              </a>
-              <a className="cardLink" href="https://root-e449364d01c7.herokuapp.com/#/">
-                <i className="faIcons__item fa fa-link" aria-hidden="true" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="card">
           <img className="cardImg" src={memory} alt="" />
           <div className="cardContent">
             <h2 className="cardName">
@@ -108,6 +76,38 @@ export default function Portfolio() {
                 <i className="faIcons__item fa fa-github" aria-hidden="true" />
               </a>
               <a className="cardLink" href="https://memory-wine.vercel.app/">
+                <i className="faIcons__item fa fa-link" aria-hidden="true" />
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div className="card">
+          <img className="cardImg" src={root} alt="" />
+          <div className="cardContent">
+            <h2 className="cardName">
+              Root | Grow With Us
+              <div className="technologies--icons cardTechIcons">
+                <svg className="techIcon cardTechIcon">
+                  <use xlinkHref="/sprite.svg#icon-html5"></use>
+                </svg>
+                <svg className="techIcon cardTechIcon">
+                  <use xlinkHref="/sprite.svg#icon-css3"></use>
+                </svg>
+                <svg className="techIcon cardTechIcon">
+                  <use xlinkHref="/sprite.svg#icon-react"></use>
+                </svg>
+              </div>
+            </h2>
+
+            <div className="faIcons">
+              <a
+                className="cardLink"
+                href="https://github.com/KaroLLain/root"
+              >
+                <i className="faIcons__item fa fa-github" aria-hidden="true" />
+              </a>
+              <a className="cardLink" href="https://root-e449364d01c7.herokuapp.com/#/">
                 <i className="faIcons__item fa fa-link" aria-hidden="true" />
               </a>
             </div>
